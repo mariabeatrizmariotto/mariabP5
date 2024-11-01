@@ -1,0 +1,41 @@
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  background(220);
+}// fantasia, aventura, drama
+
+// abracadabra, LIVRE, fantasia
+// a bela e a fera, LIVRE, fantasia
+
+// abracadabra, livre, fantasia
+// a bela e a fera, livre, fantasia
+// através da minha janela, 16, romance
+// a cinco passos de você, 14, romance
+
+let campoIdade;
+
+function setup() {
+  createCanvas(400, 400);
+  campoIdade = createInput("5");
+}
+
+function draw() {
+  background(220);
+  let idade = campoIdade.value();
+  let recomendacao = geraRecomendacao(idade);
+  text(recomendacao, width / 2, height / 2);
+}
+
+function geraRecomendacao(idade) {
+  if(idade >= 10) {
+    if(idade >= 14) {
+      return "A cinco passos de você";
+    } else {
+      return "Através da minha janela";
+    }
+  } else {
+    return "A bela e a fera";
+  }
+}
